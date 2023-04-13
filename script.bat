@@ -1,0 +1,1 @@
+"C:\wamp64\bin\php\php8.0.28\php.exe" -f "C:\Users\nursh\Desktop\Work\Example Code\cronjob\index.php"
