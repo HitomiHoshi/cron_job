@@ -10,6 +10,8 @@ $conn->set_charset("utf8mb4");
 // $str = "INSERT INTO departments(name) VALUES ('TestValue')";
 
 $today = date("Y-m-d");
+$todayTime = date("Y-m-d H:i:s");
+
 $departments_temp = "SELECT * FROM departments";
 $result = $conn->query($departments_temp);
 
@@ -18,7 +20,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         if ($row["date"] < $today) {
                 $id = $row["id"];
-                $str = "UPDATE departments Set date='0000-00-00' WHERE Id='$id'";
+                $str = "UPDATE departments Set date='0000-00-00', dateTime='0000-00-00' WHERE Id='$id'";
                 $conn->query($str);
         }
     }
